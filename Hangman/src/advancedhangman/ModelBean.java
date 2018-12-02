@@ -1,3 +1,5 @@
+package advancedhangman;
+
 import java.io.Serializable;
 
 public class ModelBean implements Serializable {

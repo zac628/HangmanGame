@@ -10,5 +10,16 @@ package advancedhangman;
  * @author Justin/Zachary
  */
 public class Controller {
+    private View views;
+    private ModelBean models;
+    
+    Controller (ModelBean model, View view)
+    {
+        views = view;
+        models = model;
+        
+    }
+    
+    
     
 }

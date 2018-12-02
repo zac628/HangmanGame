@@ -17,9 +17,9 @@ public class AdvancedHangman {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Model model = new Model();
+        ModelBean model = new ModelBean();
         View view = new View();
-        //Controller controller = new Controller (model, view);
+        Controller controller = new Controller (model, view);
         view.setVisible(true);
     }
     
