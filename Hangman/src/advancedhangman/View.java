@@ -753,7 +753,7 @@ public class View extends javax.swing.JFrame {
  
     public void reset()
     {
-        
+        output.setText("");
         repaint();
     }
     

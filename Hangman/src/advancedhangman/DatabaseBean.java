@@ -140,7 +140,7 @@ public class DatabaseBean implements Serializable {
             int n = rand.nextInt(30)+1;
             try (Connection conn = DriverManager.getConnection(url);
                  PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                pstmt.setInt(1, diff);
+                pstmt.setInt(1, n);
                 ResultSet rs = pstmt.executeQuery();
                 String temp = rs.getString("word");
                 int dif = rs.getInt("difficulty");

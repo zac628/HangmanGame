@@ -19,6 +19,7 @@ public class Controller {
     public Users m;
     public char[] wordblanks;
     private int difficulty, counter=0;
+    History h;
     
     Controller (ModelBean model, View view)
     {
@@ -29,6 +30,7 @@ public class Controller {
         views.addDifficultyAL(new difficultyListener());
         views.addLettersAL(new letterListener());
         views.addSdAL(new difficultyBttnListener());
+        views.addNewGameAL(new newGameListener());
         models = model;
         
     }
@@ -71,6 +73,7 @@ public class Controller {
                 if (views.getPassword1().equals(views.getPassword2()))
                 {
                     m = new Users(views.getUsername(), views.getPassword1());
+                    h = DatabaseBean.retrieveHistory();
                     DatabaseBean.writeUser(m);
                     views.continue2();
                     views.chooseDifficulty();
@@ -147,6 +150,13 @@ public class Controller {
                 {
                     views.mismatch2();
                 }
+        }
+    }
+    
+    class newGameListener implements ActionListener {
+        public void actionPerformed(ActionEvent e)
+        {
+            views.reset();
         }
     }
     
