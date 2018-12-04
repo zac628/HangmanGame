@@ -121,7 +121,6 @@ public class DatabaseBean implements Serializable {
 
     public static void updateLoss(int num){
         String sql = "UPDATE History SET losses = ?" + "WHERE uid = ?";
-        currentUser = 2;
         try(Connection conn = DriverManager.getConnection(url);
             PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setInt(1, num+1);
