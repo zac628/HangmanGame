@@ -102,12 +102,6 @@ public class View extends javax.swing.JFrame {
         label2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         label3 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        uppass1 = new javax.swing.JPasswordField();
-        uppass2 = new javax.swing.JPasswordField();
-        updatebutton = new javax.swing.JButton();
         letterpanel = new javax.swing.JPanel();
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
@@ -389,55 +383,26 @@ public class View extends javax.swing.JFrame {
         label3.setText("Losses:");
         label3.setToolTipText("");
 
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel16.setText("Change Password:");
-        jLabel16.setToolTipText("");
-
-        jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel17.setText("New Password:");
-        jLabel17.setToolTipText("");
-
-        jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel18.setText("Retype Password: ");
-        jLabel18.setToolTipText("");
-
-        updatebutton.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        updatebutton.setText("Update");
-
         javax.swing.GroupLayout userinfoLayout = new javax.swing.GroupLayout(userinfo);
         userinfo.setLayout(userinfoLayout);
         userinfoLayout.setHorizontalGroup(
             userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userinfoLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(userinfoLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(userinfoLayout.createSequentialGroup()
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(userinfoLayout.createSequentialGroup()
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(userinfoLayout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel16)
-                            .addGroup(userinfoLayout.createSequentialGroup()
-                                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18))
-                                .addGap(52, 52, 52)
-                                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(uppass1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                                    .addComponent(uppass2)))))
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(userinfoLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(updatebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(userinfoLayout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(263, Short.MAX_VALUE))
         );
         userinfoLayout.setVerticalGroup(
             userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,19 +419,7 @@ public class View extends javax.swing.JFrame {
                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(uppass1)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(uppass2)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(updatebutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(22, 22, 22))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("User", userinfo);
@@ -594,7 +547,7 @@ public class View extends javax.swing.JFrame {
     
     public void saveRegister()
     {
-        username = username1.getText();
+        username = username2.getText();
         password = String.valueOf(password2.getPassword());
         password22 = String.valueOf(password3.getPassword());
     }
@@ -671,16 +624,6 @@ public class View extends javax.swing.JFrame {
         }
     }
     
-    public void saveUpdate()
-    {
-        password = String.valueOf(uppass1.getPassword());
-        password22 = String.valueOf(uppass2.getPassword());
-    }
-    
-    public void addUpdateAL(ActionListener a)
-    {
-        updatebutton.addActionListener(a);
-    }
     
     public void addNewGameAL(ActionListener a)
     {
@@ -783,9 +726,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -815,9 +755,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton registerconfirm;
     private javax.swing.JDialog registerdialog;
     private javax.swing.JButton selectdifficultybutton;
-    private javax.swing.JButton updatebutton;
-    private javax.swing.JPasswordField uppass1;
-    private javax.swing.JPasswordField uppass2;
     private javax.swing.JPanel userinfo;
     private javax.swing.JTextField username1;
     private javax.swing.JTextField username2;

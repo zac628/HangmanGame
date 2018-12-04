@@ -18,7 +18,7 @@ public class Controller {
     private String username, password,x,d, word,diff;
     public Users m;
     public char[] wordblanks;
-    private int difficulty, counter=0;
+    private int difficulty, counter=0, wins, loss;
     private char c;
     public History h;
     
@@ -62,6 +62,8 @@ public class Controller {
                 {
                     views.continue1();
                     h = DatabaseBean.retrieveHistory();
+                    wins = h.getW();
+                    loss = h.getL();
                     views.chooseDifficulty();
                 }
                 else
@@ -75,10 +77,14 @@ public class Controller {
                 if (views.getPassword1().equals(views.getPassword2()))
                 {
                     m = new Users(views.getUsername(), views.getPassword1());
-                    h = DatabaseBean.retrieveHistory();
                     DatabaseBean.writeUser(m);
-                    h.setW(0);
-                    h.setL(0);
+                    wins = 0;
+                    loss = 0;
+                    DatabaseBean.updateWin(wins);
+                    DatabaseBean.updateLoss(loss);
+                    h = DatabaseBean.retrieveHistory();
+                    wins = h.getW();
+                    loss = h.getL();
                     views.continue2();
                     views.chooseDifficulty();
                 }
@@ -102,8 +108,9 @@ public class Controller {
             }
             word = DatabaseBean.retrieveWord(difficulty);
             views.updateOutput(displayBlanks(word));
-            views.setWinLoss(h.getW(), h.getL(), diff);
-            views.setUserTab(views.getUsername(),h.getW(), h.getL());
+            views.setWinLoss(wins, loss, diff);
+            System.out.println(wins + " " + loss);
+            views.setUserTab(views.getUsername(),wins, loss);
             views.display();
             
         }
@@ -142,23 +149,7 @@ public class Controller {
         }
     }
     
-    class updateListener implements ActionListener {
-        public void actionPerformed(ActionEvent e)
-        {
-            views.saveUpdate();
-            if (views.getPassword1().equals(views.getPassword2()))
-                {
-                    m = new Users(views.getUsername(), views.getPassword1());
-                    DatabaseBean.writeUser(m);
-                    m.setPass(views.getPassword1());
-                }
-                else
-                {
-                    views.mismatch2();
-                }
-        }
-    }
-    
+      
     class newGameListener implements ActionListener {
         public void actionPerformed(ActionEvent e)
         {
@@ -190,7 +181,9 @@ public class Controller {
            if(counter == 6)
            {
                counter = 0;
-               DatabaseBean.updateLoss(1);
+               DatabaseBean.updateLoss((loss));
+               h = DatabaseBean.retrieveHistory();
+               loss = h.getL();
                views.loser(word);
                controlReset(); 
            }
@@ -206,6 +199,9 @@ public class Controller {
         if(b.equals(word))
         {
             counter = 0;
+            DatabaseBean.updateWin(wins);
+            h = DatabaseBean.retrieveHistory();
+            wins = h.getW();
             views.updateOutput(b);
             views.winner();
             controlReset();
@@ -219,9 +215,10 @@ public class Controller {
     
     public void controlReset()
     {
+        h = DatabaseBean.retrieveHistory();
         word = DatabaseBean.retrieveWord(difficulty);
         views.updateOutput(displayBlanks(word));
-        views.setWinLoss(h.getW(), h.getL(), diff);
+        views.setWinLoss(wins, loss, diff);
         views.setUserTab(views.getUsername(),h.getW(), h.getL());
         views.display();
     }
