@@ -156,5 +156,38 @@ public class DatabaseBean implements Serializable {
         }while (b==true);
         return "";
     }
-
+    
+    public static void deleteUser(String username){
+        int userid = -1;
+        
+        String sql2 = "SELECT id FROM Users WHERE uname = ? ";
+        try (Connection conn2 = DriverManager.getConnection(url);
+             PreparedStatement pstmt2 = conn2.prepareStatement(sql2)) {
+            pstmt2.setString(1, username);
+            ResultSet rs2 = pstmt2.executeQuery();
+            userid = rs2.getInt("id");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        String sql = "DELETE FROM Users WHERE uname = ?";
+        try (Connection conn = DriverManager.getConnection(url)) {
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, username);
+                pstmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        String sql3 = "DELETE FROM History WHERE uid = ?";
+        try (Connection conn = DriverManager.getConnection(url)) {
+            try (PreparedStatement pstmt = conn.prepareStatement(sql3)) {
+                pstmt.setInt(1, userid);
+                pstmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
