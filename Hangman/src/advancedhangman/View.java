@@ -97,11 +97,11 @@ public class View extends javax.swing.JFrame {
         drawingpanel = new javax.swing.JPanel();
         userinfo = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        label3 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -369,25 +369,25 @@ public class View extends javax.swing.JFrame {
         jLabel10.setText("Username:");
         jLabel10.setToolTipText("");
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel11.setText("Username:");
-        jLabel11.setToolTipText("");
+        label1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        label1.setText("Username:");
+        label1.setToolTipText("");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel12.setText("Wins:");
         jLabel12.setToolTipText("");
 
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel13.setText("Wins:");
-        jLabel13.setToolTipText("");
+        label2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        label2.setText("Wins:");
+        label2.setToolTipText("");
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel14.setText("Losses:");
         jLabel14.setToolTipText("");
 
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel15.setText("Losses:");
-        jLabel15.setToolTipText("");
+        label3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        label3.setText("Losses:");
+        label3.setToolTipText("");
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel16.setText("Change Password:");
@@ -416,15 +416,15 @@ public class View extends javax.swing.JFrame {
                             .addGroup(userinfoLayout.createSequentialGroup()
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(userinfoLayout.createSequentialGroup()
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(userinfoLayout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel16)
                             .addGroup(userinfoLayout.createSequentialGroup()
                                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,15 +445,15 @@ public class View extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -692,9 +692,24 @@ public class View extends javax.swing.JFrame {
         selectdifficultybutton.addActionListener(a);
     }
     
+    public void setUserTab(String u, int w, int l)
+    {
+        label1.setText(u);
+        label2.setText(Integer.toString(w));
+        label3.setText(Integer.toString(l));
+    }
+    
     public void disableButton(int i)
     {
         letterbuttons[i].setEnabled(false);
+    }
+    
+    public void enableButtons()
+    {
+        for(int i=0; i<26; i++)
+        {
+            letterbuttons[i].setEnabled(true);
+        }
     }
     
     public void setWinLoss(int win, int loss, String d)
@@ -742,18 +757,18 @@ public class View extends javax.swing.JFrame {
     public void loser(String word)
     {
         JOptionPane.showMessageDialog(null, "Game Over! The word was "+word);
-        reset();
+        viewreset();
     }
     
     public void winner()
     {
         JOptionPane.showMessageDialog(null, "Congratulations! You win!");
-        reset();
+        viewreset();
     }
  
-    public void reset()
+    public void viewreset()
     {
-        output.setText("");
+        enableButtons();
         repaint();
     }
     
@@ -766,11 +781,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -785,6 +797,9 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label2;
+    private javax.swing.JLabel label3;
     private javax.swing.JPanel letterpanel;
     private javax.swing.JButton loginbutton;
     private javax.swing.JButton loginconfirm;

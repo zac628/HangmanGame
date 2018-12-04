@@ -15,11 +15,12 @@ import java.awt.event.ActionListener;
 public class Controller {
     private View views;
     private ModelBean models;
-    private String username, password,x,d, word;
+    private String username, password,x,d, word,diff;
     public Users m;
     public char[] wordblanks;
     private int difficulty, counter=0;
-    History h;
+    private char c;
+    public History h;
     
     Controller (ModelBean model, View view)
     {
@@ -31,6 +32,7 @@ public class Controller {
         views.addLettersAL(new letterListener());
         views.addSdAL(new difficultyBttnListener());
         views.addNewGameAL(new newGameListener());
+       
         models = model;
         
     }
@@ -51,7 +53,6 @@ public class Controller {
     class confirmListener implements ActionListener {
         public void actionPerformed(ActionEvent e)
         {
-            System.out.println("hello");
             x = ((javax.swing.JButton)e.getSource()).getText();
             
             if(x.equals("Confirm "))
@@ -60,6 +61,7 @@ public class Controller {
                 if (DatabaseBean.testLogin(views.getUsername(), views.getPassword1()) == true)
                 {
                     views.continue1();
+                    h = DatabaseBean.retrieveHistory();
                     views.chooseDifficulty();
                 }
                 else
@@ -75,6 +77,8 @@ public class Controller {
                     m = new Users(views.getUsername(), views.getPassword1());
                     h = DatabaseBean.retrieveHistory();
                     DatabaseBean.writeUser(m);
+                    h.setW(0);
+                    h.setL(0);
                     views.continue2();
                     views.chooseDifficulty();
                 }
@@ -89,18 +93,17 @@ public class Controller {
     class difficultyListener implements ActionListener {
         public void actionPerformed(ActionEvent e)
         {
-            d = ((javax.swing.JButton)e.getSource()).getText();
+            diff = ((javax.swing.JButton)e.getSource()).getText();
             
-            switch (d) {
+            switch (diff) {
                 case "Easy":  difficulty = 1; break;
                 case "Medium":  difficulty = 2; break;
                 case "Hard":  difficulty = 3; break;
             }
             word = DatabaseBean.retrieveWord(difficulty);
-            System.out.println(difficulty);
             views.updateOutput(displayBlanks(word));
-            System.out.println(word);
-            //views.setWinLoss(getL(), counter, d);
+            views.setWinLoss(h.getW(), h.getL(), diff);
+            views.setUserTab(views.getUsername(),h.getW(), h.getL());
             views.display();
             
         }
@@ -131,6 +134,9 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {
             d = ((javax.swing.JButton)e.getSource()).getText().toLowerCase();
+            c = d.charAt(0);
+            int x = c - 97;
+            views.disableButton(x);
             verify(word, d);
             
         }
@@ -156,7 +162,9 @@ public class Controller {
     class newGameListener implements ActionListener {
         public void actionPerformed(ActionEvent e)
         {
-            views.reset();
+            counter = 0;
+            controlReset();
+            views.viewreset();
         }
     }
     
@@ -181,7 +189,10 @@ public class Controller {
            views.draw(counter);
            if(counter == 6)
            {
+               counter = 0;
+               DatabaseBean.updateLoss(1);
                views.loser(word);
+               controlReset(); 
            }
         }
         else{
@@ -194,14 +205,25 @@ public class Controller {
         String b = new String(x);
         if(b.equals(word))
         {
+            counter = 0;
             views.updateOutput(b);
             views.winner();
+            controlReset();
         }
         else
         {
             b = b.replace("", " ").trim();
             views.updateOutput(b);
         }
+    }
+    
+    public void controlReset()
+    {
+        word = DatabaseBean.retrieveWord(difficulty);
+        views.updateOutput(displayBlanks(word));
+        views.setWinLoss(h.getW(), h.getL(), diff);
+        views.setUserTab(views.getUsername(),h.getW(), h.getL());
+        views.display();
     }
     
 }
