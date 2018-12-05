@@ -72,7 +72,6 @@ public class View extends javax.swing.JFrame {
         password1 = new javax.swing.JPasswordField();
         username1 = new javax.swing.JTextField();
         loginconfirm = new javax.swing.JButton();
-        jOptionPane1 = new javax.swing.JOptionPane();
         registerdialog = new javax.swing.JDialog();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -87,7 +86,6 @@ public class View extends javax.swing.JFrame {
         easy = new javax.swing.JButton();
         medium = new javax.swing.JButton();
         hard = new javax.swing.JButton();
-        jDialog2 = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         output = new javax.swing.JTextField();
@@ -102,13 +100,24 @@ public class View extends javax.swing.JFrame {
         label2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         label3 = new javax.swing.JLabel();
+        deleteAccountButton = new javax.swing.JButton();
         letterpanel = new javax.swing.JPanel();
 
+        openingdialog.setBackground(new java.awt.Color(0, 0, 128));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 128));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 128));
         jLabel1.setText("Welcome!");
 
+        registerbutton.setBackground(new java.awt.Color(0, 0, 128));
+        registerbutton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        registerbutton.setForeground(new java.awt.Color(255, 255, 255));
         registerbutton.setText("Register");
 
+        loginbutton.setBackground(new java.awt.Color(0, 0, 128));
+        loginbutton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        loginbutton.setForeground(new java.awt.Color(255, 255, 255));
         loginbutton.setText("Login");
 
         javax.swing.GroupLayout openingdialogLayout = new javax.swing.GroupLayout(openingdialog.getContentPane());
@@ -152,6 +161,9 @@ public class View extends javax.swing.JFrame {
 
         username1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
+        loginconfirm.setBackground(new java.awt.Color(0, 0, 0));
+        loginconfirm.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        loginconfirm.setForeground(new java.awt.Color(255, 255, 255));
         loginconfirm.setText("Confirm ");
 
         javax.swing.GroupLayout logindialogLayout = new javax.swing.GroupLayout(logindialog.getContentPane());
@@ -212,6 +224,9 @@ public class View extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel8.setText("Retype Password:");
 
+        registerconfirm.setBackground(new java.awt.Color(0, 0, 0));
+        registerconfirm.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        registerconfirm.setForeground(new java.awt.Color(255, 255, 255));
         registerconfirm.setText("Confirm");
 
         password2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -275,12 +290,15 @@ public class View extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Choose Difficulty");
 
+        easy.setBackground(new java.awt.Color(255, 255, 255));
         easy.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         easy.setText("Easy");
 
+        medium.setBackground(new java.awt.Color(255, 255, 255));
         medium.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         medium.setText("Medium");
 
+        hard.setBackground(new java.awt.Color(255, 255, 255));
         hard.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         hard.setText("Hard");
 
@@ -306,20 +324,11 @@ public class View extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
-        jDialog2.getContentPane().setLayout(jDialog2Layout);
-        jDialog2Layout.setHorizontalGroup(
-            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jDialog2Layout.setVerticalGroup(
-            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hangman");
         setBackground(new java.awt.Color(0, 0, 0));
+
+        jTabbedPane2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -328,9 +337,15 @@ public class View extends javax.swing.JFrame {
         output.setText("jTextField5");
         jPanel1.add(output, java.awt.BorderLayout.PAGE_END);
 
+        newgamebutton.setBackground(new java.awt.Color(0, 0, 128));
+        newgamebutton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        newgamebutton.setForeground(new java.awt.Color(255, 255, 255));
         newgamebutton.setText("New Game  ");
         jPanel1.add(newgamebutton, java.awt.BorderLayout.LINE_START);
 
+        selectdifficultybutton.setBackground(new java.awt.Color(0, 0, 128));
+        selectdifficultybutton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        selectdifficultybutton.setForeground(new java.awt.Color(255, 255, 255));
         selectdifficultybutton.setText("Select Difficulty");
         jPanel1.add(selectdifficultybutton, java.awt.BorderLayout.LINE_END);
 
@@ -346,11 +361,11 @@ public class View extends javax.swing.JFrame {
         drawingpanel.setLayout(drawingpanelLayout);
         drawingpanelLayout.setHorizontalGroup(
             drawingpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 333, Short.MAX_VALUE)
         );
         drawingpanelLayout.setVerticalGroup(
             drawingpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGap(0, 390, Short.MAX_VALUE)
         );
 
         jPanel1.add(drawingpanel, java.awt.BorderLayout.CENTER);
@@ -383,13 +398,21 @@ public class View extends javax.swing.JFrame {
         label3.setText("Losses:");
         label3.setToolTipText("");
 
+        deleteAccountButton.setBackground(new java.awt.Color(255, 0, 0));
+        deleteAccountButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        deleteAccountButton.setText("Delete Account");
+
         javax.swing.GroupLayout userinfoLayout = new javax.swing.GroupLayout(userinfo);
         userinfo.setLayout(userinfoLayout);
         userinfoLayout.setHorizontalGroup(
             userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userinfoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userinfoLayout.createSequentialGroup()
+                .addContainerGap(158, Short.MAX_VALUE)
                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(userinfoLayout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(userinfoLayout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -397,29 +420,34 @@ public class View extends javax.swing.JFrame {
                     .addGroup(userinfoLayout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(userinfoLayout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(263, Short.MAX_VALUE))
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(135, 135, 135))
+            .addGroup(userinfoLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(deleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         userinfoLayout.setVerticalGroup(
             userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userinfoLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(userinfoLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userinfoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(260, Short.MAX_VALUE))
+                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(deleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         jTabbedPane2.addTab("User", userinfo);
@@ -504,6 +532,11 @@ public class View extends javax.swing.JFrame {
     {
         registerconfirm.addActionListener(a);
         loginconfirm.addActionListener(a);
+    }
+    
+    public void addDeleteAL(ActionListener a)
+    {
+        deleteAccountButton.addActionListener(a);
     }
     
     public void register()
@@ -717,11 +750,11 @@ public class View extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteAccountButton;
     private javax.swing.JDialog difficultydialog;
     private javax.swing.JPanel drawingpanel;
     private javax.swing.JButton easy;
     private javax.swing.JButton hard;
-    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -734,7 +767,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel label1;

@@ -32,6 +32,7 @@ public class Controller {
         views.addLettersAL(new letterListener());
         views.addSdAL(new difficultyBttnListener());
         views.addNewGameAL(new newGameListener());
+        views.addDeleteAL (new deleteAccountListener());
        
         models = model;
         
@@ -61,6 +62,7 @@ public class Controller {
                 if (DatabaseBean.testLogin(views.getUsername(), views.getPassword1()) == true)
                 {
                     views.continue1();
+                    username = views.getUsername();
                     h = DatabaseBean.retrieveHistory();
                     wins = h.getW();
                     loss = h.getL();
@@ -77,12 +79,9 @@ public class Controller {
                 if (views.getPassword1().equals(views.getPassword2()))
                 {
                     m = new Users(views.getUsername(), views.getPassword1());
-                    DatabaseBean.writeUser(m);
-                    wins = 0;
-                    loss = 0;
-                    DatabaseBean.updateWin(wins);
-                    DatabaseBean.updateLoss(loss);
+                    DatabaseBean.writeUser(m); 
                     h = DatabaseBean.retrieveHistory();
+                    username = views.getUsername();
                     wins = h.getW();
                     loss = h.getL();
                     views.continue2();
@@ -109,7 +108,6 @@ public class Controller {
             word = DatabaseBean.retrieveWord(difficulty);
             views.updateOutput(displayBlanks(word));
             views.setWinLoss(wins, loss, diff);
-            System.out.println(wins + " " + loss);
             views.setUserTab(views.getUsername(),wins, loss);
             views.display();
             
@@ -159,6 +157,14 @@ public class Controller {
         }
     }
     
+    class deleteAccountListener implements ActionListener {
+        public void actionPerformed (ActionEvent e)
+        {
+            DatabaseBean.deleteUser(username);
+            System.exit(0);
+        }
+    }
+    
     public void verify(String word, String letter)
     {
         boolean b = false;
@@ -181,7 +187,7 @@ public class Controller {
            if(counter == 6)
            {
                counter = 0;
-               DatabaseBean.updateLoss((loss));
+               DatabaseBean.updateLoss(loss);
                h = DatabaseBean.retrieveHistory();
                loss = h.getL();
                views.loser(word);

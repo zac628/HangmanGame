@@ -52,6 +52,7 @@ public class DatabaseBean implements Serializable {
             pstmt2.setString(1, u);
             ResultSet rs2 = pstmt2.executeQuery();
             userid = rs2.getInt("id");
+            currentUser = rs2.getInt("id");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
