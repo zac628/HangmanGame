@@ -652,7 +652,7 @@ public class View extends javax.swing.JFrame {
         {
             letterbuttons[i].setPreferredSize(new Dimension (30,30));
             letterbuttons[i].setBackground(new Color(50,50,150));
-            letterbuttons[i].setForeground(new Color(255,255,255));
+            letterbuttons[i].setForeground(new Color(0,0,255));
             letterpanel.add(letterbuttons[i]);
         }
     }
